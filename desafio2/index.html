@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpg" sizes="50x50"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/GNOME_Calculator_icon_2018.svg/1024px-GNOME_Calculator_icon_2018.svg.png">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div class="calculadora">
+        <p id="resultado"></p>
+        <button class="cinza" onclick="limpar()">CE</button>
+        <button class="cinza" onclick="voltar()">C</button>
+        <button class="laranja" onclick="insert('/')">/</button>
+        <button class="laranja" onclick="insert('*')">X</button>
+
+        <button class="azul" onclick="insert('1')">1</button>
+        <button class="azul" onclick="insert('2')">2</button>
+        <button class="azul" onclick="insert('3')">3</button>
+        <button class="laranja" onclick="insert('-')">-</button>
+
+        <button class="azul" onclick="insert('4')">4</button>
+        <button class="azul" onclick="insert('5')">5</button>
+        <button class="azul" onclick="insert('6')">6</button>
+        <button class="laranja" onclick="insert('+')">+</button>
+
+        <button class="azul" onclick="insert('7')">7</button>
+        <button class="azul" onclick="insert('8')">8</button>
+        <button class="azul" onclick="insert('9')">9</button>
+        <button id="calculo" class="laranja tall" onclick="calcular()">=</button>
+
+        <button class="azul wide" onclick="insert('0')">0</button>
+        <button class="azul" onclick="insert('.')">.</button>
+        <audio src="https://www.youtube.com/watch?v=63CBbWHH1CE">musica</audio>
+    </div>
+    <script src="java.js"></script>
+</body>
+
+</html>
