@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" sizes="16x16" href="https://images.freeimages.com/365/images/previews/83b/swords-and-shield-icon-53109.jpg" type="image/x-icon">
+    <title>Game</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Selecione o nome do seu personagem:</h1>
+        <input type="text" id="seuNome">
+        <h1>Selecione seu poder de ataque:</h1>
+        <input type="number" id="seuPoder">
+        <h1>Selecione o nome de seu oponente:</h1>
+        <input type="text" id="nomeOponente">
+        <h1>Selecione a quantidade de vida:</h1>
+        <input type="number" id="vidaOponente">
+        <h1>Selecione a defesa:</h1>
+        <input type="number" id="defesa">
+        <h1>Seu oponente possui um escudo?</h1>
+        <div class="botoes">
+            <label for="escudoSim">
+                <input type="radio" id="escudoSim" name="escudo" value="Sim">
+                Sim
+            </label>
+            <label for="escudoNao">
+                <input type="radio" id="escudoNao" name="escudo" value="Não">
+                Não
+            </label>
+        </div>
+        <button id="calcularDano" onclick="atualizacao()">Calcular Dano</button>
+        <div id="resultado"></div>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
