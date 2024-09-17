@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Registro -->
+    <div class="bg-black/[.50] w-96 h-lvh rounded font-serif text-center text-white">
+        <h1 class="my-3">Registre-se!</h1>
+
+        <form action="" id="registro">
+            <label for="nomePro" class="mt-9">Digite Seu Nome:</label><br>
+            <input type="text" name="nomePro" id="nomePro" class="my-7 text-black"><br>
+
+            <label for="numPro" class="my-7">Digite Seu Número:</label><br>
+            <input type="number" name="numPro" id="numPro" class="my-7 text-black"><br>
+
+            <label for="quartos" class="my-7">Número de Quartos:</label><br>
+            <input type="number" name="quartos" id="quartos" class="my-7 text-black"><br>
+
+            <label for="banheiros" class="my-7">Número de Banheiros:</label><br>
+            <input type="number" name="banheiros" id="banheiros" class="my-7 text-black"><br>
+
+            <p>Possui Garagem?</p>
+            <input type="radio" name="garagem" id="garagemSim" value="sim">
+            <label for="garagemSim">Sim</label>
+
+            <input type="radio" name="garagem" id="garagemNao" value="nao">
+            <label for="garagemNao">Não</label><br>
+
+            <button type="button" class="bg-blue-600 rounded h-9 w-36 my-7" onclick="getInfo()">Concluir Registro</button>
+        </form>
+    </div>
+
+    <!-- Tabela -->
+    <div id="tabela">
+        <table class="text-nowrap m-3 p-3 overflow-hidden bg-[#faf7fa] rounded font-serif text-lg">
+            <thead>
+                <tr class="gap-2">
+                    <th class="px-5">Nome do Dono</th>
+                    <th class="px-5">Número do Dono</th>
+                    <th class="px-5">Número de Quartos</th>
+                    <th class="px-5">Número de Banheiros</th>
+                    <th class="px-5">Possui Garagem?</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaCorpo" class="text-nowrap m-3 p-3 overflow-hidden bg-[#faf7fa] rounded font-serif text-lg">
+                <!-- Conteúdo da tabela -->
+            </tbody>
+        </table>
+    </div>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
