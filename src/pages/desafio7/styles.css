@@ -5,10 +5,4 @@
 }
 body {
     background-color: goldenrod;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Alterado de justify-items para justify-content */
-    min-height: 100vh; /* Adicionado para garantir que o body ocupe toda a altura da viewport */
-    margin: 0;
-    padding: 0;
 }
