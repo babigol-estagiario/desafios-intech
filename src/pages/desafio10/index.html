@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body class="h-screen bg-gray-300">
+    <div class="grid grid-rows-[auto,1fr,auto] grid-cols-1 h-full">
+      
+      <!-- Header -->
+      <header class="bg-gray-800 text-white">
+        <div class="flex justify-evenly items-center py-4 font-serif">
+          <a href="#" class="text-center">Home</a>
+          <a href="#" class="text-center">Sobre</a>
+          <a href="#" class="text-center">Serviços</a>
+          <a href="#" class="text-center">Contato</a>
+        </div>
+      </header>
+
+      <!-- Main content -->
+      <main class="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
+        
+        <!-- Welcome Section -->
+        <section class="col-span-1 md:col-span-3 flex flex-col items-center justify-center text-center bg-gray-200 p-8 rounded-md shadow-lg">
+          <h1 class="font-sans text-4xl font-bold mb-4">Bem-vindo ao nosso site!</h1>
+          <p class="text-lg mb-6">Oferecemos os melhores serviços para você!</p>
+          <button type="button" class="h-10 w-36 rounded-md bg-gray-800 text-white font-serif hover:bg-gray-700 transition">
+            Saiba Mais
+          </button>
+        </section>
+
+        <!-- Services Section -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 col-span-1 md:col-span-3">
+          <div class="rounded-lg bg-white p-6 shadow-lg">
+            <h2 class="text-xl font-bold">Serviço 1</h2>
+            <p class="mt-2 text-sm">Descrição do serviço 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-lg">
+            <h2 class="text-xl font-bold">Serviço 2</h2>
+            <p class="mt-2 text-sm">Descrição do serviço 2. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-lg">
+            <h2 class="text-xl font-bold">Serviço 3</h2>
+            <p class="mt-2 text-sm">Descrição do serviço 3. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white py-4 text-center">
+        © 2024 Todos os direitos reservados.
+      </footer>
+      
+    </div>
+  </body>
+</html>
