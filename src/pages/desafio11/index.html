@@ -4,31 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script> 
-</head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
-    <div class="bg-gray-800 rounded-md w-80 text-center p-1 mb-5 h-12 text-white">
-        <h1 class="text-3xl font-bold mb-8">Jogo da Velha</h1>
-    </div>
-    <div class="bg-gray-800 w-96 h-96 flex justify-center items-center rounded-md">
-        <div id="board" class="grid grid-cols-3 gap-2 w-80 h-80">
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(0)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(1)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(2)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(3)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(4)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(5)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(6)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(7)"></div>
-        <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(8)"></div>
-    </div>
-</div>
-<div class="flex justify-center items-center bg-gray-800 w-36 h-12 rounded-md mt-8">
-<button type="button" onclick="recarregarPagina()">
-        <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -5v5h5"/>  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 5v-5h-5" /></svg>
-    </button>
-</div>
+    <style>
+        /* Estilo para a mensagem */
+        #mensagem {
+            display: none; /* Inicialmente escondida */
+            position: fixed;
+            width: 500px;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #38a169; /* bg-green-400 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10; /* Para sobrepor outros elementos */
+            color: white; /* Cor do texto */
+            text-align: center; /* Centraliza o texto */
+        }
 
+        /* Estilo para o tabuleiro */
+        #tabuleiro {
+            display: none; /* Começa escondido até que o jogador escolha um símbolo */
+            position: relative; /* Para que a mensagem flutue sobre ele */
+            z-index: 5; /* Menor que a mensagem */
+        }
+
+        .cell {
+            width: 80px; /* Define uma largura fixa */
+            height: 80px; /* Define uma altura fixa */
+        }
+
+        /* Estilo para a mensagem de vitória/empate */
+        .mensagem-vitoria {
+            position: fixed;
+            top: 40%; /* Alinhado no meio da tela */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(56, 168, 105, 0.9); /* Cor com transparência */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 20; /* Acima de tudo */
+            display: none; /* Inicialmente escondido */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="flex flex-col items-center gap-4">
+        <div class="flex justify-center items-center rounded-xl pt-6 p-6 bg-gray-800 w-80 h-12">
+            <h1 class="text-3xl text-white font-bold">Jogo da Velha</h1>
+        </div>
+        <div class="bg-gray-800 w-96 h-96 flex justify-center items-center rounded-xl">
+            <div id="tabuleiro" class="grid grid-cols-3 gap-2 w-80 h-80">
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(0)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(1)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(2)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(3)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(4)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(5)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(6)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(7)"></div>
+                <div class="cell bg-white border-2 rounded-md border-black text-3xl flex justify-center items-center cursor-pointer hover:bg-gray-200" onclick="userMove(8)"></div>
+            </div>
+        </div>
+        <div class="flex justify-center items-center bg-gray-800 w-36 h-12 rounded-md mt-8">
+            <button type="button" onclick="recarregarPagina()">
+                <svg class="h-8 w-8 text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"/>
+                    <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -5v5h5"/>
+                    <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 5v-5h-5" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div id="mensagem">
+        <h2>Bem-Vindo!</h2>
+        <h2>Por favor  escolha uma opção:</h2>
+        <label for="escolher">
+            <button type="button" value="X" class="m-3 p-3 text-4xl bg-gray-800 rounded-md">X</button>
+            <button type="button" value="O" class="m-3 p-3 text-4xl bg-gray-800 rounded-md">O</button><br>
+        </label>
+        <button onclick="fecharMensagem()" class="bg-white text-green-500 py-1 px-3 rounded">Fechar</button>
+    </div>
+    <div id="mensagem-vitoria" class="mensagem-vitoria">
+        <h2 class="text-2xl font-bold" id="vitoria-texto"></h2>
+        <button id="revanche" class="bg-green-500 text-white mt-4 p-2 rounded">Revanche</button>
+    </div>
+    </div>
+    
     <script src="javascript.js"></script>
 </body>
 </html>
