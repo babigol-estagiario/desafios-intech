@@ -1,97 +1,50 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-.game-board{
-    width: 100%;
-    height: 500px;
-    border-bottom: 10px solid rgb(35, 160, 35);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87CEEE, #E0F6FF);
+#pipe{
+    /* animation:pipe-animation 4s infinite linear; */
 }
-.pipe{
-    position: absolute;
-    bottom: 0;
-    width: 100px;
-    animation: pipe-animation 3s infinite linear;
+#nuvem{
+    /* animation:nuvem-animation 8s infinite linear; */
 }
-.mario{
-    width: 120px;
-    position: absolute;
-    bottom: 0;
+#mario{
+    animation:mario-animation 500ms infinite linear;
 }
-.nuvenzinha{
-    width: 500px;
-    height: 200px;
-    position: absolute;
-    animation: nuvem-animation 6s infinite linear;
-}
-.jump{
-    animation: jump 500ms ease-out;
-}
-@keyframes nuvem-animation {
+@keyframes pipe-animation{
     from{
-        right: -100px;
+        left: 100%;
     }
-    to {
-        right: 100%;
+    to{
+        left: -100%;
     }
 }
-@keyframes pipe-animation {
+@keyframes nuvem-animation{
     from{
-    right: -80px;
+        left: 100%;
     }
-    to {
-    right: 100%;  
+    to{
+        left: -100%;
     }
 }
-@keyframes jump{
-    0% {
+@keyframes mario-animation{
+    0%{
         bottom: 0;
     }
-    15% {
-        bottom: 60px;
+    25%{
+        bottom: 8rem;
     }
-    25% {
-        bottom: 90px;
+    50%{
+        bottom: 15rem;
     }
-    35% {
-        bottom: 120px;
+    50%{
+        bottom: 15rem;
     }
-    50% {
-        bottom: 150px;
+    75%{
+        bottom: 8rem; 
     }
-    65% {
-        bottom: 165px;
-    }
-    75% {
-        bottom: 190px;
-    }
-    80% {
-        bottom: 190px;
-    }
-    85% {
-        bottom: 170px;
-    }
-    88% {
-        bottom: 150px;
-    }
-    89% {
-        bottom: 120px;
-    }
-    88% {
-        bottom: 100px;
-    }
-    90% {
-        bottom: 90px;
-    }
-    95% {
-        bottom: 40px;
-    }
-    100% {
+    100%{
         bottom: 0;
     }
 }

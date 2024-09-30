@@ -8,13 +8,11 @@
     <title>Game</title>
 </head>
 <body>
-
-    <div class="game-board">
-        <img src="./images/mario-run.gif" class="mario jump">
-        <img src="./images/tubo.png"class="pipe">
-        <img src="./images/nuvem.png" class="nuvenzinha">
+    <div class="relative border-2 border-black w-screen h-[35rem] overflow-hidden">
+        <img src="./images/tubozinho.png" id="pipe" class="absolute w-36 bottom-0 left-[10rem]">
+        <img src="./images/nuvem.png" id="nuvem" class="absolute m-4 w-[30rem] h-[15rem]">
+        <img src="./images/mario-run.gif" id="mario" class="absolute w-48 bottom-[8rem]">
     </div>
-
     <script src="./js/script.js" defer></script>
 </body>
 </html>
