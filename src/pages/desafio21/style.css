@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-image:url(./wp4247401-purple-and-blue-galaxy-wallpapers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.task-enter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+.task-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+  

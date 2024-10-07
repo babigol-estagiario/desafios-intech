@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./Captura_de_tela_2024-10-07_155527-removebg-preview.png" sizes="180x180" type="image/x-icon">
+    <title>To-Do List</title>
+  </head>
+  <body class="bg-gray-100 p-10">
+
+    <div class="max-w-4xl mx-auto">
+      <img id="imagem" src="./Captura_de_tela_2024-10-07_155527-removebg-preview.png" class="w-24 h-24">
+        <div class="mb-4">
+            <input id="taskInput" type="text" placeholder="Adicionar nova tarefa" class="border p-2 w-full rounded-lg text-lg">
+            <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" onclick="addTarefas()">Adicionar Tarefa</button>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+            <div>
+                <h2 class="text-lg font-bold mb-2 text-blue-500">A Fazer</h2>
+                <div id="aFazer" class="bg-blue-50 p-4 rounded shadow min-h-[300px]"></div>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-bold mb-2 text-yellow-500">Fazendo</h2>
+                <div id="fazendo" class="bg-yellow-50 p-4 rounded shadow min-h-[300px]"></div>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-bold mb-2 text-green-500">Feito</h2>
+                <div id="feito" class="bg-green-50 p-4 rounded shadow min-h-[300px]"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
