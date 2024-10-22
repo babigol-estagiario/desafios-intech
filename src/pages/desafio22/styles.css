@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+
+@font-face {
+  font-family: "NeonBlitz";
+  src: url(./Neonblitz.ttf);
+}
+@font-face {
+  font-family: "Faroeste";
+  src: url(./Carnevalee-Freakshow.ttf);
+}
+
+#titulo{
+  font-family: "NeonBlitz";
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}

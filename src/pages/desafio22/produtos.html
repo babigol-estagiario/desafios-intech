@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/>  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="./pngtree-store-icon-image_1198218-removebg-preview.png" type="image/x-icon">
+</head>
+<body class="grid grid-cols-12 grid-rows-12 h-screen bg-gray-100">
+  <div class="flex flex-row justify-around items-center col-span-12 row-span-1 bg-black">
+    <a href="inicio.html" class="text-white font-[NeonBlitz] font-bold transition hover:scale-110">Início</a>
+    <a href="produtos.html" class="text-white font-[NeonBlitz] font-bold transition hover:scale-110">Produtos</a>
+    <a href="carrinho.html" class="text-white font-[NeonBlitz] font-bold transition hover:scale-110">Carrinho</a>
+  </div>  
+  <div class="flex justify-center items-center col-span-12 row-span-1 bg-gray-400 gap-4">
+    <h1 class="font-[Faroeste] text-4xl">Adicionar</h1>
+    <img onclick="abrirContainer()" class="cursor-pointer transition hover:scale-110" width="35" height="35" src="https://img.icons8.com/ios-filled/50/add.png" alt="add"/>
+  </div>
+  <div id="produtosDiv" class="grid grid-cols-2  col-span-10 col-start-2 row-span-12 row-start-3 h-full gap-5=4"></div>
+  <div id="container" class="grid grid-cols-8 grid-rows-8 col-span-12 row-span-12 bg-black/30 inset-0 fixed hidden">
+    <div class="grid grid-cols-9 grid-rows-8 col-span-6 row-span-6 col-start-2 row-start-2 bg-white rounded-md shadow-2xl border-2 border-black">
+      <div class="grid grid-cols-12 col-span-12 row-span-1 bg-gray-500 rounded-t-md">
+        <div class="flex justify-center items-center col-span-6 col-start-4 h-full">
+          <h1 class="text-4xl font-[NeonBlitz] text-white bg-black rounded-md w-64 p-1 text-center">Adicionar</h1>
+        </div>
+        <div class="flex justify-center items-center col-start-11">
+          <button class="p-1 transition hover:scale-110" id="salvar" onclick="salvarProdutos()"><img width="44" height="44" src="https://img.icons8.com/ios-filled/50/save--v1.png" alt="save--v1"/></button>
+        </div>
+        <div class="flex col-start-12">
+          <button class="p-1 transition hover:scale-110" id="fechar" onclick="fecharContainer()"><img width="40" height="40" src="https://img.icons8.com/ios-filled/50/emergency-exit.png" alt="emergency-exit"/></button>
+        </div>
+      </div>
+      <div id="imagemDiv" class="relative flex justify-center items-center col-span-3 col-start-2 row-span-5 row-start-3 p-4 shadow-xl mt-8">
+        <img id="imagemCadastro" src="" alt="" class="absolute h-64 w-72 z-0">
+        <img src="./pngtree-red-and-black-abstract-modern-border-frame-illustration-png-image_3586649-removebg-preview.png" alt="Borda" class="absolute inset-0 h-full w-full z-10">
+    </div>    
+      <div class="flex flex-col justify-center items-center col-span-2 col-start-2 row-start-2 gap-2">
+        <label for="imagemProduto" class="font-[Faroeste] text-xl">Imagem do Produto:</label>
+        <input type="file" id="fileImagem" class=" border-2 bg-gray-200 w-80 h-10 ">
+      </div>
+      <div class="flex flex-col justify-center items-center col-span-1 col-start-5 row-start-7">
+        <h1 class="font-[Faroeste]">Preview</h1>
+        <button onclick="preview()"><img width="40" height="40" src="https://img.icons8.com/ios/50/visible--v1.png" alt="visible--v1"/></button>
+      </div>
+      <div class="flex flex-col justify-center items-center col-span-2 col-start-6 row-start-3 gap-2">
+        <label for="nomeProduto" class="font-[Faroeste] text-xl">Nome do Produto:</label>
+        <input type="text" id="nomeProduto" class=" border-2 bg-gray-200 w-80 h-10 ">
+      </div>
+      <div class="flex flex-col justify-center items-center col-span-2 col-start-6 row-start-4 gap-2 mt-4">
+        <label for="valorProduto" class="font-[Faroeste] text-xl">Valor do Produto:</label>
+        <input type="number" id="valorProduto" class="border-2 bg-gray-200 w-80 h-10 ">
+      </div>
+      <div class="flex flex-col justify-center items-center col-span-2 col-start-6 row-start-5 gap-2 mt-4">
+        <label for="descProduto" class="font-[Faroeste] text-xl">Desc. do Produto:</label>
+        <input type="text" id="descProduto" class="border-2 bg-gray-200 w-80 h-10 ">
+      </div>
+      <div class="pretty p-switch p-fill flex flex-col justify-center items-center col-span-2 col-start-6 row-start-6 mt-8 bg-green-200 border-2 border-green-300">
+        <input type="checkbox" id="freteProduto" />
+        <div class="state mt-1">
+          <label class="font-[Faroeste]">Frete Gratis</label>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  <script src="produtos.js"></script>
+</body>
+</html>

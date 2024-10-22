@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="./pngtree-store-icon-image_1198218-removebg-preview.png" type="image/x-icon">
+</head>
+<body class="grid grid-cols-12 grid-rows-12 h-screen bg-gray-100">
+    <div class="flex flex-row justify-around items-center col-span-12 row-span-1 bg-black">
+        <a href="inicio.html" class="text-white font-[NeonBlitz] font-bold transition hover:scale-110">Início</a>
+        <a href="produtos.html" class="text-white font-[NeonBlitz] font-bold transition hover:scale-110">Produtos</a>
+        <a href="carrinho.html" class="text-white font-[NeonBlitz] font-bold transition hover:scale-110">Carrinho</a>
+      </div>  
+        <div class="flex flex-row col-span-3 justify-center items-center row-span-2 row-start-10 rounded bg-gray-300 p-2 gap-4">
+            <h1 class="font-[Faroeste] text-2xl">valor total :</h1><span class="text-2xl font-serif" id="valorTotal"></span>
+        </div>
+      </div>
+      <div class="col-span-7 row-span-9 col-start-2 row-start-3 rounded-l-xl bg-gray-200" id="carrinho">
+        
+      </div>
+      <script src="produtos.js"></script>
+</body>
+</html>
