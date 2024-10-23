@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./d6df7830ee5838503c148bc6bbb5255f.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz</title>
+</head>
+<body class="bg-[url('./backgroundimage.jpg')] bg-no-repeat bg-cover grid grid-cols-12 grid-rows-12 h-screen">
+    <div class="flex justify-center items-center bg-blue-600 col-span-6 row-span-2 col-start-4 row-start-2 rounded-full">
+        <h1  id="pergunta" class="text-white font-[BetterMilk] text-3xl"></h1>
+    </div>
+    <button id="gerarPergunta" class="col-start-3 row-start-2 transition hover:scale-110" onclick="gerarPergunta()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFhElEQVR4nO2dW4tcRRDH21fj7U2jMcHpOkQEI76reL/iS0DxAoJRWWO+Qogvokl8F/dNEl0vIIjKTtXM6pDtmt3VrCEwD0lc8COo2UviBrIjdTb4IMlmz06f093n1B/qJZu5dP+m+lJdp9oYlUqlUqlUKpVKpVJdVUMzvMG1ujtd1n7SWTrAgIecxSMMNM6WvsgNaHz93/DQNNB7+f9tdXde/R1VhdS7r3eTa9FzzuJRB/QrW1xmoOGWzOKys/SLwJq2+CztoW2KYxOab3VvZdt5m4F6zuKlLQO4jsl7O6CfHdBb8pkK53/qt+hxB/QVA14sC8I14QBecIBfssXHGg8mH+OBZqqGwNf2nFMOOi/JfNU4j2BLp0MD4I3A2Pajpu7q7frxDgY65gDXQnc6b8Ys/TAHkztMHeUyGnOWzgfvZCjoLYB/y0LD1EW8+7ub2eJE6I7l0b3l296u3m0mZfWh+6ADWgjemeDL8JzL8AGToqZbnSecpcXwnUiePQWXZXNpUpIDfK3MjR0HNmdpdTrrvGpSEAPud0CXQ3calw0lb2P7XROz5FfTBBj8HxRccxbfMLHOGWzpn9CdxFVDsXipbzvPmNhWUyNFYxM3Z2kxmtVXHia3dDZ0p3BoKEALczB5S2gexln6PHRncDz2dVgYGY1F0AnDqCxUmEUChXmcJ3QHQFwm8boT97a3Vw6kFvEpKM2OVQqjn9EjIULop/fODVcWlgqZvCYIlKpOIOU0LdTh0uD1k8OiktcE8pLfKjl5dEAvBmrgMDEgQ251nq8CSF+B0GaHrdnyz8JD/dogQQ8pey5ZT9VRIFwMyEQpMCQsIDlMCoQKegleLCUZjy2+E9T1IdEhaz1Mv88/EKBe6IYN0gXyUwkR3fBHsoNUgVha9ZrgLVnooRvFCQO5Yk/7A2LxaAQNGiYNxNJH/oDI8xmhGwSpA8E5j7ErXAreIEgeyJKX2JY8Eub7y0kEVjqqqP3xwdnCQOQ1W/msMqLEM9nUXaMDAXzK9xeTsHjsWllY8g5EQk8jA5GHJxUIeYLiIbGOAd9XIOQFiMvooAcg9LECIT9ALB4ZHYjFTxUIeQJCn0SZd9XUSd1ZPK5A6gZEhyyKa8jSSZ0im9R12TuMatmrG0OKa2Mo5S98T25NXWWxjwyUExbv9v3Fmhpc5N2dO0cGouF38jN/WFr0lloqxb+8/1qadx4y6wXGOpC8lF7wRg1SBgL4oTcgUrkgfIMoaSByruQNiKSwSCpL6EYNEgXiPQ1IJDUKQzdskCoQwCnjW1eKUyoQKN4HfcA3S0q2phX1ECrqHRdKq3yqjyNQPI8jiGTrrx5CBSf0kotpMiDrpE6bHK5oxpStftZ+QYHQpoBUUnkuL4pv8VQIKIO0lr3zpipx1n5YCwfQRiurtcoLMWsVINrAO/AzU7Vm75m6nQH/Crnq4ghNCvIEKT4Ty+6dI7NSduVFJLlGoTuBIzG59sJEUuLvTOjO4OCGv0tZdRODpABkLE9ZcQjPsHR+ptW930R4J0gDy8TSqtcnbH2q36JXmlVImS47237ZxCxJBmsCFCcwMhozKchl7b0hLvjiqmBYWpXRwCR381qCN+rw9cziUnSlxQutvgDP1cgzzkS3mioqWZvXIe7lLB6XPZepiyTMkmjh5T+Dh0PKUnLX5gF+I0FUU3fJWYHUtY12eAI8KWc+pmlyre5DUm0tHhDUl7rEjbt69WrZLBIpdQGKbOafaXGiEVetbrHy6T7xmjJzieW9Jb1TJusoLmFJQbSHtskGjC0dluJfo0ST8/sULc5KVTcJBM5v//7G0O2rheZgckd++ZhczZfRwRwW0Ljsc/K9jpQBsXQ4/xvgfokWeKlRpVKpVCqVSqVSqVSmvvoXLfODkJI5TJ0AAAAASUVORK5CYII="></button>
+    <div class="flex justify-center items-center text-white font-[BetterMilk] text-3xl bg-blue-600 col-span-6 row-span-1 col-start-4 row-start-7 rounded-full">
+        <input type="text" class="w-full m-8 bg-transparent border-none outline-none" id="resposta">
+    </div>
+    <div class="text-6xl text-black font-[BetterMilk] col-start-10 row-start-2 flex justify-center items-end"><h1 id="perguntaAtual">1</h1></div>
+    <div class="flex justify-center items-center col-span-1 row-span-1 col-start-10 rounded-full row-start-7">
+        <button class="transition hover:scale-110" onclick="validarResposta()" id="enviar"><img width="70" height="70" src="https://img.icons8.com/color/48/circled-chevron-right--v1.png" alt="circled-chevron-right--v1"/></button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
